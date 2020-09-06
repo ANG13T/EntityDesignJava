@@ -23,8 +23,28 @@ public class Delivery {
     @Type(type = "yes_no")
     private boolean completed;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery", cascade = CascadeType.REMOVE)
     private List<Plant> plants;
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setAddress(String address){
+        this.address = address;
+    }
+
+    public void setDeliveryTime(LocalDateTime deliveryTime){
+        this.deliveryTime = deliveryTime;
+    }
+
+    public void setTime(Date time){
+        this.time = time;
+    }
+
+    public void setCompleted(boolean completed){
+        this.completed = completed;
+    }
 
 
 }
