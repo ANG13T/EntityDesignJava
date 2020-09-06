@@ -8,6 +8,9 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+@NamedQuery(name = "Delivery.findByName",
+        query = "select d from Delivery d where d.name = :name")
+
 @Entity
 public class Delivery {
     @Id
@@ -44,6 +47,14 @@ public class Delivery {
 
     public void setCompleted(boolean completed){
         this.completed = completed;
+    }
+
+    public Long getId(){
+        return id;
+    }
+
+    public List<Plant> getPlants(){
+        return this.plants;
     }
 
 

@@ -25,4 +25,12 @@ public class Plant {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "delivery_id")
     private Delivery delivery;
+
+    public void setDelivery(Delivery d){
+        this.delivery = d;
+    }
+
+    public Long getId(){
+        return this.id;
+    }
 }
